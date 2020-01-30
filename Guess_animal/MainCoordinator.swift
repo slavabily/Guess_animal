@@ -19,6 +19,15 @@ class MainCoordinator: Coordinator {
     }
     
     func start(_ dataSource: ProjectDataSource) {
-         
+        vc.dataSource = dataSource
+        vc.showMainViewAction = showMainView(_:)
+        
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func showMainView(_ dataSource: ProjectDataSource) {
+        vc.view = MainView(dataSourse: dataSource, buttonAction: {[unowned vc] (b) in
+            vc.buttonAction(b)
+        })
     }
 }

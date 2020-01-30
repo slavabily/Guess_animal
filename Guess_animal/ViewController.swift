@@ -9,10 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController, Storyboarded {
+    
+    var dataSource = ProjectDataSource()
+    var showMainViewAction: ((ProjectDataSource) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    func buttonAction(_ sender: UIButton) {
+        
     }
 
 

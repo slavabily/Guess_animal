@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B995F9DF23E2D86F0063BAEC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B995F9DE23E2D86F0063BAEC /* MainView.swift */; };
 		B9C9DF9223E218700074B2DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C9DF9123E218700074B2DC /* AppDelegate.swift */; };
 		B9C9DF9423E218700074B2DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C9DF9323E218700074B2DC /* SceneDelegate.swift */; };
 		B9C9DF9623E218700074B2DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C9DF9523E218700074B2DC /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B995F9DE23E2D86F0063BAEC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B9C9DF8E23E218700074B2DC /* Guess_animal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guess_animal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C9DF9123E218700074B2DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9C9DF9323E218700074B2DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				B9C9DFA923E21E6A0074B2DC /* MainCoordinator.swift */,
 				B9C9DFAB23E2201E0074B2DC /* ProjectDataSource.swift */,
 				B9C9DF9523E218700074B2DC /* ViewController.swift */,
+				B995F9DE23E2D86F0063BAEC /* MainView.swift */,
 				B9C9DF9723E218700074B2DC /* Main.storyboard */,
 				B9C9DF9A23E2187D0074B2DC /* Assets.xcassets */,
 				B9C9DF9C23E2187D0074B2DC /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9C9DFAC23E2201E0074B2DC /* ProjectDataSource.swift in Sources */,
+				B995F9DF23E2D86F0063BAEC /* MainView.swift in Sources */,
 				B9C9DF9623E218700074B2DC /* ViewController.swift in Sources */,
 				B9C9DFAA23E21E6A0074B2DC /* MainCoordinator.swift in Sources */,
 				B9C9DF9223E218700074B2DC /* AppDelegate.swift in Sources */,
