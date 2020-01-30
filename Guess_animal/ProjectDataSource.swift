@@ -11,4 +11,10 @@ import GameplayKit
 
 struct ProjectDataSource {
     
+    var score = 0
+    
+    var button1Name: String!
+    var button2Name: String!
+    var button3Name: String!
+    
 }

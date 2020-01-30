@@ -12,11 +12,18 @@ class ViewController: UIViewController, Storyboarded {
     
     var dataSource = ProjectDataSource()
     var showMainViewAction: ((ProjectDataSource) -> Void)?
+    
+    override func loadView() {
+        showMainViewAction!(dataSource)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+        
+        navigationItem.largeTitleDisplayMode = .never
+        
+        title = "Guess the animal name"
+     }
     
     func buttonAction(_ sender: UIButton) {
         

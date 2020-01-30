@@ -26,7 +26,7 @@ class MainCoordinator: Coordinator {
     }
     
     func showMainView(_ dataSource: ProjectDataSource) {
-        vc.view = MainView(dataSourse: dataSource, buttonAction: {[unowned vc] (b) in
+        vc.view = MainView(dataSource: dataSource, buttonAction: {[unowned vc] (b) in
             vc.buttonAction(b)
         })
     }
