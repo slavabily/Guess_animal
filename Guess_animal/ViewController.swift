@@ -14,6 +14,9 @@ class ViewController: UIViewController, Storyboarded {
     var showMainViewAction: ((ProjectDataSource) -> Void)?
     
     override func loadView() {
+        dataSource.prepareQuestion()
+        title = dataSource.question.uppercased()
+
         showMainViewAction!(dataSource)
     }
 
@@ -22,11 +25,31 @@ class ViewController: UIViewController, Storyboarded {
         
         navigationItem.largeTitleDisplayMode = .never
         
-        title = "Guess the animal name"
+ 
+        
      }
     
     func buttonAction(_ sender: UIButton) {
         
+        var title: String
+        
+        if sender.tag == dataSource.correctAnswer {
+            title = "Correct"
+            dataSource.score += 1
+        } else {
+            title = "Wrong"
+            dataSource.score -= 1
+        }
+        
+        let ac = UIAlertController(title: title, message: "Your score is \(dataSource.score)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: reloadMainView(action:)))
+        present(ac, animated: true)
+        
+    }
+     
+    func reloadMainView(action: UIAlertAction) {
+        dataSource.prepareQuestion()
+        showMainViewAction?(dataSource)
     }
 
 
