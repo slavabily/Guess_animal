@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class MainCoordinator: Coordinator {
+    
     var navigationController: UINavigationController
     var children = [Coordinator]()
     let vc = ViewController.instantiate()
@@ -18,15 +19,15 @@ class MainCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
-    func start(_ dataSource: ProjectDataSource) {
-        vc.dataSource = dataSource
-        vc.showMainViewAction = showMainView(_:)
-        
+    func start() {
+         
+        vc.showMainViewAction = showMainView(_:_:_:_:)
         navigationController.pushViewController(vc, animated: false)
+        
     }
     
-    func showMainView(_ dataSource: ProjectDataSource) {
-        vc.view = MainView(dataSource: dataSource, buttonAction: {[unowned vc] (b) in
+    func showMainView(_ button1Name: String, _ button2Name: String, _ button3Name: String, _ score: Int) {
+        vc.view = MainView(button1Name: button1Name, button2Name: button2Name, button3Name: button3Name, score: score, buttonAction: {[unowned vc] (b) in
             vc.buttonAction(b)
         })
     }

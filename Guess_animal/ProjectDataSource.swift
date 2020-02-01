@@ -11,14 +11,12 @@ import GameplayKit
 
 struct ProjectDataSource {
     
-    private var animals = [String]()
+    var animals = [String]()
     
     var count: Int {
         return animals.count
     }
     
-    var question: String!
-    var correctAnswer = 0
     var score = 0
     
     var button1Name: String!
@@ -34,10 +32,6 @@ struct ProjectDataSource {
         button1Name = animals[0]
         button2Name = animals[1]
         button3Name = animals[2]
-        
-        correctAnswer = GKRandomSource.sharedRandom().nextInt(upperBound: 3)
-        
-        question = animals[correctAnswer]
     }
     
 }

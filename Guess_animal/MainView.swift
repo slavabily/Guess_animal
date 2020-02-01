@@ -9,7 +9,7 @@
 import UIKit
 
 class MainView: UIView {
-
+    
     var buttonAction: ((_ sender: UIButton) -> Void)?
     
     let button1 = UIButton()
@@ -22,7 +22,7 @@ class MainView: UIView {
            fatalError("init(coder:) has not been implemented")
        }
     
-    init(dataSource: ProjectDataSource, buttonAction: @escaping (_ sender: UIButton) -> Void) {
+    init(button1Name: String, button2Name: String, button3Name: String, score: Int, buttonAction: @escaping (_ sender: UIButton) -> Void) {
         super.init(frame: .zero)
         backgroundColor = .white
         
@@ -42,7 +42,7 @@ class MainView: UIView {
         
         button1.tag = 0
         button2.tag = 1
-        button1.tag = 2
+        button3.tag = 2
         
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
@@ -59,6 +59,14 @@ class MainView: UIView {
         button2.translatesAutoresizingMaskIntoConstraints = false
         button3.translatesAutoresizingMaskIntoConstraints = false
         
+        button1.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        button2.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        button3.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        
+        button1.setImage(UIImage(named: button1Name), for: .normal)
+        button2.setImage(UIImage(named: button2Name), for: .normal)
+        button3.setImage(UIImage(named: button3Name), for: .normal)
+        
         stackView.addArrangedSubview(button1)
         stackView.addArrangedSubview(button2)
         stackView.addArrangedSubview(button3)
@@ -68,17 +76,7 @@ class MainView: UIView {
         stackView.setCustomSpacing(30, after: button2)
         stackView.distribution = .fillEqually
         
-        button1.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        button2.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        button3.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        
-        
-        button1.setImage(UIImage(named: dataSource.button1Name), for: .normal)
-        button2.setImage(UIImage(named: dataSource.button2Name), for: .normal)
-        button3.setImage(UIImage(named: dataSource.button3Name), for: .normal)
-        
-        
-        scoreLabel.attributedText = NSAttributedString(string: "Score: \(dataSource.score)", attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .largeTitle)])
+        scoreLabel.attributedText = NSAttributedString(string: "Score: \(score)", attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .largeTitle)])
                
     }
     
