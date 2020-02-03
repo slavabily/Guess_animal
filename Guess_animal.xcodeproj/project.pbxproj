@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B905351F23E72B4A00D6907D /* GuessAnimalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B905351E23E72B4A00D6907D /* GuessAnimalModel.swift */; };
 		B995F9DF23E2D86F0063BAEC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B995F9DE23E2D86F0063BAEC /* MainView.swift */; };
 		B9C8ED5E23E36CCC00B6840A /* Guess_animalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C8ED5D23E36CCC00B6840A /* Guess_animalTests.swift */; };
 		B9C9DF9223E218700074B2DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C9DF9123E218700074B2DC /* AppDelegate.swift */; };
@@ -18,7 +19,6 @@
 		B9C9DFA623E21ACA0074B2DC /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C9DFA523E21ACA0074B2DC /* Storyboarded.swift */; };
 		B9C9DFA823E21D2A0074B2DC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C9DFA723E21D2A0074B2DC /* Coordinator.swift */; };
 		B9C9DFAA23E21E6A0074B2DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C9DFA923E21E6A0074B2DC /* MainCoordinator.swift */; };
-		B9C9DFAC23E2201E0074B2DC /* ProjectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C9DFAB23E2201E0074B2DC /* ProjectDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B905351E23E72B4A00D6907D /* GuessAnimalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessAnimalModel.swift; sourceTree = "<group>"; };
 		B995F9DE23E2D86F0063BAEC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B9C8ED5B23E36CCC00B6840A /* Guess_animalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Guess_animalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C8ED5D23E36CCC00B6840A /* Guess_animalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess_animalTests.swift; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		B9C9DFA523E21ACA0074B2DC /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		B9C9DFA723E21D2A0074B2DC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B9C9DFA923E21E6A0074B2DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		B9C9DFAB23E2201E0074B2DC /* ProjectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 				B9C9DFA523E21ACA0074B2DC /* Storyboarded.swift */,
 				B9C9DFA723E21D2A0074B2DC /* Coordinator.swift */,
 				B9C9DFA923E21E6A0074B2DC /* MainCoordinator.swift */,
-				B9C9DFAB23E2201E0074B2DC /* ProjectDataSource.swift */,
+				B905351E23E72B4A00D6907D /* GuessAnimalModel.swift */,
 				B9C9DF9523E218700074B2DC /* ViewController.swift */,
 				B995F9DE23E2D86F0063BAEC /* MainView.swift */,
 				B9C9DF9723E218700074B2DC /* Main.storyboard */,
@@ -223,10 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9C9DFAC23E2201E0074B2DC /* ProjectDataSource.swift in Sources */,
 				B995F9DF23E2D86F0063BAEC /* MainView.swift in Sources */,
 				B9C9DF9623E218700074B2DC /* ViewController.swift in Sources */,
 				B9C9DFAA23E21E6A0074B2DC /* MainCoordinator.swift in Sources */,
+				B905351F23E72B4A00D6907D /* GuessAnimalModel.swift in Sources */,
 				B9C9DF9223E218700074B2DC /* AppDelegate.swift in Sources */,
 				B9C9DFA823E21D2A0074B2DC /* Coordinator.swift in Sources */,
 				B9C9DF9423E218700074B2DC /* SceneDelegate.swift in Sources */,

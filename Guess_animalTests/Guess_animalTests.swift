@@ -20,15 +20,21 @@ class Guess_animalTests: XCTestCase {
     }
     
     func testLoadingAnimals() {
-        var model = ProjectDataSource()
-        model.prepareQuestion()
-        XCTAssert(model.count == 6, "model.count = \(model.count)")
+        let model = GuessAnimalModel(testing: true)
+        XCTAssert(model.count == 6, "count = \(model.count)")
     }
     
-    func testAnimalNamesFetched() {
-        var model = ProjectDataSource()
-        XCTAssert(model.prepareQuestion().isEmpty == false, "There are no any question prepared.")
+    func testLoadingQuestion() {
+        let model = GuessAnimalModel(testing: true)
+        XCTAssert(model.question == "bear", "question = \(model.question)")
     }
+    
+    func testCorrectAmswer() {
+        let model = GuessAnimalModel(testing: true)
+        XCTAssert(model.correctAnswer == 1, "correctAnswer = \(model.correctAnswer)")
+    }
+    
+ 
 
  
 }
