@@ -11,11 +11,7 @@ import GameplayKit
 
 class ViewController: UIViewController, Storyboarded {
     
-    var animals = [String]()
-    
-    var count: Int {
-        return animals.count
-    }
+    var model = GuessAnimalModel()
     
     var score = 0
     
@@ -23,15 +19,10 @@ class ViewController: UIViewController, Storyboarded {
     var button2Name: String!
     var button3Name: String!
     
-    
     var showMainViewAction: ((_ button1Name: String, _ button2Name: String, _ buttonName: String, _ score: Int) -> Void)?
     
-    var correctAnserNumber = 0
+    var correctAnswer = Int()
     var question = String()
-    
-    override func loadView() {
-        prepareQuestion()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,38 +31,27 @@ class ViewController: UIViewController, Storyboarded {
         title = question
         
         navigationItem.largeTitleDisplayMode = .never
-        
     }
     
-    func prepareQuestion() {
-           
-           animals = ["elephant", "dolphin", "bear", "crocodile", "deer", "wolf"]
-           
-           animals = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: animals) as! [String]
-           
-           button1Name = animals[0]
-           button2Name = animals[1]
-           button3Name = animals[2]
-       }
-    
     func prepareAnswer() {
-        let buttonsNames = [button1Name, button2Name, button3Name]
         
-        let randomChoise = GKRandomSource.sharedRandom().nextInt(upperBound: 3)
-               
-        question = buttonsNames[randomChoise]!
+        button1Name = model.buttonNames[0]
+        button2Name = model.buttonNames[1]
+        button3Name = model.buttonNames[2]
         
-        correctAnserNumber = buttonsNames.firstIndex(of: question)!
+        question = model.question
+        
+        correctAnswer = model.correctAnswer
         
         showMainViewAction!(button1Name, button2Name, button3Name, score)
-
+        
     }
     
     func buttonAction(_ sender: UIButton) {
         
         var title: String
         
-        if sender.tag == correctAnserNumber {
+        if sender.tag == correctAnswer {
             title = "Correct"
             score += 1
         } else {
@@ -86,7 +66,8 @@ class ViewController: UIViewController, Storyboarded {
     }
      
     func reloadMainView(action: UIAlertAction) {
-        prepareQuestion()
+        
+        model = GuessAnimalModel()
         prepareAnswer()
 
         title = question
