@@ -15,10 +15,6 @@ class ViewController: UIViewController, Storyboarded {
     
     var score = 0
     
-    var button1Name: String!
-    var button2Name: String!
-    var button3Name: String!
-    
     var showMainViewAction: ((_ button1Name: String, _ button2Name: String, _ buttonName: String, _ score: Int) -> Void)?
     
     var correctAnswer = Int()
@@ -35,16 +31,15 @@ class ViewController: UIViewController, Storyboarded {
     
     func prepareAnswer() {
         
-        button1Name = model.buttonNames[0]
-        button2Name = model.buttonNames[1]
-        button3Name = model.buttonNames[2]
-        
         question = model.question
         
         correctAnswer = model.correctAnswer
         
-        showMainViewAction!(button1Name, button2Name, button3Name, score)
+        let button1Name = model.buttonNames[0]
+        let button2Name = model.buttonNames[1]
+        let button3Name = model.buttonNames[2]
         
+        showMainViewAction!(button1Name, button2Name, button3Name, score)
     }
     
     func buttonAction(_ sender: UIButton) {

@@ -30,8 +30,6 @@ struct GuessAnimalModel {
         
         buttonNames = Array(animals[0 ... 2])
         
-        print(buttonNames)
-        
         let randomChoise = randomSource?.nextInt(upperBound: 3)
         
         question = buttonNames[randomChoise!]
