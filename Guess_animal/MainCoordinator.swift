@@ -23,7 +23,6 @@ class MainCoordinator: Coordinator {
          
         vc.showMainViewAction = showMainView(_:_:_:_:)
         navigationController.pushViewController(vc, animated: false)
-        
     }
     
     func showMainView(_ button1Name: String, _ button2Name: String, _ button3Name: String, _ score: Int) {

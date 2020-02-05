@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyBeaver
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,9 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
-    }
+       setupSwiftyBeaverLogging()
+        SwiftyBeaver.debug("Look ma! I'm logging to the DEBUG level.")
+       return true
+     }
+     
+     func setupSwiftyBeaverLogging() {
+       let consol = ConsoleDestination()
+        SwiftyBeaver.addDestination(consol)
+     }
 
     // MARK: UISceneSession Lifecycle
 
